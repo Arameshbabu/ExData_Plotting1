@@ -23,17 +23,5 @@ plot1 <- function(filename){
   hist(plotData$Global_active_power, col = "red", xlab = "Global Active Power (kilowatts)", ylab = "Frequency", main = "Global Active Power")
   dev.off() ## Clear the screen device after writing the plot
   
-  ## Create the screen device for the fourth plot
-  png(filename = "Plot4.png", width = 480, height = 480, units = "px", pointsize = 12, bg = "white", res = NA, family = "", restoreConsole = TRUE)
-  par(mfrow = c(2,2))
-  hist(plotData$Global_active_power, col = "red", xlab = "Global Active Power (kilowatts)", ylab = "Frequency", main = "Global Active Power")
-  plot(plotData$Time, plotData$Global_active_power, type = "l", xlab = "", ylab = "Global Active Power")
-  plot(plotData$Time, plotData$Sub_metering_1, ylim = yrange, type = "l", xlab = "", ylab = "")
-  par(new=T)
-  plot(plotData$Time, plotData$Sub_metering_2, ylim = yrange, type = "l", xlab = "", ylab = "", col = "red")
-  par(new=T)
-  plot(plotData$Time, plotData$Sub_metering_3, ylim = yrange, type = "l", xlab = "", ylab = "Energy sub metering", col = "blue")
-  plot(plotData$Time, plotData$Global_reactive_power, type = "l", xlab = "datetime", ylab = "Global_reactive_power")
-  
   ## Saved plots will be uploaded. Assignment complete.
 }
